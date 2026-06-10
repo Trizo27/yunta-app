@@ -3,6 +3,7 @@ const cors = require('cors')
 require('dotenv').config()
 
 const cancionesRouter = require('./routes/canciones')
+const eventosRouter = require('./routes/eventos')
 
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -12,6 +13,7 @@ app.use(express.json())
 
 // Rutas
 app.use('/canciones', cancionesRouter)
+app.use('/eventos', eventosRouter)
 
 // Ruta base
 app.get('/', (req, res) => {
