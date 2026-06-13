@@ -4,7 +4,8 @@ const {
   getCanciones,
   getCancionById,
   createCancion,
-  aprobarCancion
+  aprobarCancion,
+  getGeneros
 } = require('../controllers/cancionesController')
 
 // GET /canciones
@@ -18,5 +19,7 @@ router.post('/', createCancion)
 
 // PATCH /canciones/:id/aprobar
 router.patch('/:id/aprobar', aprobarCancion)
+
+router.get('/generos', getGeneros)
 
 module.exports = router

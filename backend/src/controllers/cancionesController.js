@@ -96,4 +96,21 @@ const aprobarCancion = async (req, res) => {
   })
 }
 
-module.exports = { getCanciones, getCancionById, createCancion, aprobarCancion }
+// GET /canciones/generos — Devuelve los géneros disponibles en la base de datos
+const getGeneros = async (req, res) => {
+  const { data, error } = await supabase
+    .from('canciones')
+    .select('genero')
+    .eq('aprobado', true)
+    .not('genero', 'is', null)
+
+  if (error) {
+    return res.status(500).json({ error: error.message })
+  }
+
+  // Extraemos géneros únicos
+  const generosUnicos = [...new Set(data.map(c => c.genero))]
+  res.json({ data: generosUnicos })
+}
+
+module.exports = { getCanciones, getCancionById, createCancion, aprobarCancion, getGeneros }
