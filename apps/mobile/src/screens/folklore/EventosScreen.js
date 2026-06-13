@@ -84,9 +84,9 @@ const EventosScreen = ({ navigation }) => {
       />
       <TouchableOpacity
         style={styles.fab}
-        onPress={() => navigation.navigate('Canciones')}
+        onPress={() => navigation.navigate('CrearEvento')}
       >
-        <Text style={styles.fabText}>🎸 Ver cancionero</Text>
+        <Text style={styles.fabText}>+ Crear evento</Text>
       </TouchableOpacity>
     </View>
   )

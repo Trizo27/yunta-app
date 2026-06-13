@@ -11,6 +11,7 @@ import EventosScreen from '../screens/folklore/EventosScreen'
 import CancionesScreen from '../screens/folklore/CancionesScreen'
 import DetalleEventoScreen from '../screens/folklore/DetalleEventoScreen'
 import DetalleCancionScreen from '../screens/folklore/DetalleCancionScreen'
+import CrearEventoScreen from '../screens/folklore/CrearEventoScreen'
 
 const Tab = createBottomTabNavigator()
 const Stack = createNativeStackNavigator()
@@ -43,6 +44,11 @@ const FolkloreStack = () => {
         name="DetalleCancion"
         component={DetalleCancionScreen}
         options={{ title: 'Acordes y Letra' }}
+      />
+      <Stack.Screen
+        name="CrearEvento"
+        component={CrearEventoScreen}
+        options={{ title: 'Nuevo Evento' }}
       />
     </Stack.Navigator>
   )
